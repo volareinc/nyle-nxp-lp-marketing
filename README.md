@@ -1,4 +1,4 @@
-# nxp-lp-marketing
+# nyle-nxp-lp-marketing
 
 NYLE X PARTNERS マーケティングLP サイト
 
@@ -24,7 +24,7 @@ NYLE X PARTNERS マーケティングLP サイト
 ## ディレクトリ構造
 
 ```
-nxp-lp-marketing/
+nyle-nxp-lp-marketing/
 ├── index.html                    # ルートリダイレクト（/ → /marketing/）
 ├── 404.html                      # 404エラーページ
 ├── assets/                       # 共通アセット
@@ -69,7 +69,7 @@ nxp-lp-marketing/
 - **旧ドメイン**: `https://x.seohacks.net/`
 - **新ドメイン**: `https://nxp.nyle.co.jp/`
 - **旧リポジトリ**: `volareinc/nxp-seohacks`
-- **新リポジトリ**: `volareinc/nxp-lp-marketing`
+- **新リポジトリ**: `volareinc/nyle-nxp-lp-marketing`
 
 ### 主な変更点
 
