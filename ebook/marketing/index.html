@@ -35,16 +35,16 @@
 <meta name="twitter:image" content="https://nxp.nyle.co.jp/assets/img/ogp.webp" />
 
 <!-- ファビコン-->
-<link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="../../assets/img/favicon.ico">
-<link rel="apple-touch-icon" sizes="128x128" href="../../assets/img/favicon.ico">
+<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="apple-touch-icon" sizes="128x128" href="/assets/img/favicon.ico">
 
 <!--js-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- <script src="../../assets/js/main.js"></script> -->
+<!-- <script src="/assets/js/main.js"></script> -->
 
 <!--css-->
-<link href="../../assets/css/style.css?" rel="stylesheet" type="text/css">
+<link href="/assets/css/style.css?" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -55,8 +55,8 @@
 <header>
     <div class="header-inner">
         <h1 class="header-logo">
-            <a href="../../marketing/">
-                <img src="../../assets/img/logo.svg" alt="NYLE X PARTNERS">
+            <a href="/marketing/">
+                <img src="/assets/img/logo.svg" alt="NYLE X PARTNERS">
             </a>
         </h1>
     </div>
@@ -84,7 +84,7 @@
     // ヘッダーとフッターを外部HTMLから読み込み
     document.addEventListener('DOMContentLoaded', () => {
         Promise.all([
-            fetch('../../includes/footer.html').then(res => res.text())
+            fetch('/includes/footer.html').then(res => res.text())
         ]).then(([footer]) => {
             document.getElementById('footer').innerHTML = footer;
         });
