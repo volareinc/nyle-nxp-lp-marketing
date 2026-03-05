@@ -256,7 +256,7 @@ FV
 #fv {
   padding: unset;
   background-color: #FFF;
-  background-image: url(../entry/assets/img/fv-bg.png);
+  background-image: url(/entry/assets/img/fv-bg.png);
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -295,7 +295,7 @@ FV
 }
 @media (max-width: 800px) {
   #fv .fv-content-left {
-    background-image: url(../entry/assets/img/fv-bg-sp.png);
+    background-image: url(/entry/assets/img/fv-bg-sp.png);
     background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
@@ -717,7 +717,7 @@ FV
 }
 @media (max-width: 800px) {
   #fv .fv-second-bg {
-    background-image: url(../entry/assets/img/fv-second-bg.png);
+    background-image: url(/entry/assets/img/fv-second-bg.png);
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -870,14 +870,14 @@ section {
 }
 
 .section-bg {
-  background-image: url(../entry/assets/img/section-bg.png);
+  background-image: url(/entry/assets/img/section-bg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 @media (max-width: 800px) {
   .section-bg {
-    background-image: url(../entry/assets/img/section-bg-sp.png);
+    background-image: url(/entry/assets/img/section-bg-sp.png);
   }
 }
 
@@ -1310,7 +1310,7 @@ section {
   position: absolute;
   top: 5px;
   left: 0;
-  background: url(../entry/assets/img/icon-greencheck.svg) no-repeat center center/contain;
+  background: url(/entry/assets/img/icon-greencheck.svg) no-repeat center center/contain;
   width: 16px;
   height: 16px;
 }
