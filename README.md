@@ -50,6 +50,12 @@ nyle-nxp-lp-marketing/
 │   ├── complete/
 │   │   └── index.html
 │   └── assets/                  # エントリー固有アセット
+├── ai/                           # AI関連LP（旧nyle-nxp-lpリポジトリ）
+│   ├── contact/                 # AI問い合わせ
+│   ├── css/                     # スタイルシート
+│   ├── images/                  # 画像
+│   ├── img/                     # 画像
+│   └── js/                      # JavaScript
 ├── config/                       # インフラ設定
 │   ├── nginx/
 │   │   └── nxp.conf
