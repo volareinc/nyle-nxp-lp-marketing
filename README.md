@@ -89,7 +89,12 @@ nyle-nxp-lp-marketing/
 
 ## デプロイ
 
-詳細なデプロイ手順は `docs/deployment-guide.md` を参照してください。
+詳細なCI/CD構成は [`docs/cicd-github-actions.md`](docs/cicd-github-actions.md) を参照してください。
+
+| ブランチ | 環境 | URL |
+|---------|------|-----|
+| `develop` | dev | `https://dev.nxp.nyle.co.jp` |
+| `main` | prd | `https://nxp.nyle.co.jp` |
 
 ### 開発環境
 
@@ -105,9 +110,9 @@ npx http-server -p 8000
 
 ### 本番環境
 
-- **インフラ**: S3 + CloudFront または EC2 + nginx + ALB
+- **インフラ**: EC2 + nginx + ALB
 - **ドメイン**: `nxp.nyle.co.jp`
-- **SSL証明書**: ACM
+- **デプロイ方式**: GitHub Actions + S3 + SSM SendCommand
 
 ## 技術スタック
 
