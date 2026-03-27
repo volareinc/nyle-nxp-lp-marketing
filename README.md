@@ -1,6 +1,7 @@
 # nyle-nxp-lp-marketing
 
 NYLE X PARTNERS マーケティングLP サイト
+※AI人材LPも統合しました。
 
 ## 概要
 
@@ -10,8 +11,9 @@ NYLE X PARTNERS マーケティングLP サイト
 
 | ページ | URL |
 |--------|-----|
-| トップページ（リダイレクト） | `https://nxp.nyle.co.jp/` → `/marketing/` |
 | サービスページ | `https://nxp.nyle.co.jp/marketing/` |
+| ドメイントップ（リダイレクト） | `https://nxp.nyle.co.jp/` → `/marketing/` |
+| AI人材LPトップ | `https://nxp.nyle.co.jp/ai/` |
 | 問い合わせページ | `https://nxp.nyle.co.jp/contact/` |
 | 問い合わせ完了ページ | `https://nxp.nyle.co.jp/contact/complete/` |
 | 資料DLページ（リダイレクト） | `https://nxp.nyle.co.jp/ebook/` → `/ebook/marketing/` |
@@ -50,7 +52,7 @@ nyle-nxp-lp-marketing/
 │   ├── complete/
 │   │   └── index.html
 │   └── assets/                  # エントリー固有アセット
-├── ai/                           # AI関連LP（旧nyle-nxp-lpリポジトリ）
+├── ai/                           # AI人材LP（旧nyle-nxp-lpリポジトリ）
 │   ├── contact/                 # AI問い合わせ
 │   ├── css/                     # スタイルシート
 │   ├── images/                  # 画像
