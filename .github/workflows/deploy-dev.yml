@@ -1,0 +1,85 @@
+name: Deploy to Dev
+
+on:
+  push:
+    branches:
+      - develop
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: ap-northeast-1
+  S3_BUCKET: nyle-nxp-lp-deploy
+  DEPLOY_ENV: dev
+  INSTANCE_ID: i-0195408171d28ba05
+
+jobs:
+  deploy:
+    name: Deploy to dev.nxp.nyle.co.jp
+    runs-on: ubuntu-latest
+    environment: dev
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Sync to S3
+        run: |
+          aws s3 sync . s3://${{ env.S3_BUCKET }}/${{ env.DEPLOY_ENV }}/ \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "docs/*" \
+            --exclude "README.md"
+
+      - name: Deploy via SSM
+        run: |
+          COMMAND_ID=$(aws ssm send-command \
+            --region ${{ env.AWS_REGION }} \
+            --instance-ids "${{ env.INSTANCE_ID }}" \
+            --document-name "AWS-RunShellScript" \
+            --parameters 'commands=[
+              "set -euo pipefail",
+              "aws s3 sync s3://${{ env.S3_BUCKET }}/${{ env.DEPLOY_ENV }}/ /var/www/nyle-nxp-lp/ --delete --region ${{ env.AWS_REGION }}",
+              "find /var/www/nyle-nxp-lp -type f -exec chmod 644 {} \\;",
+              "find /var/www/nyle-nxp-lp -type d -exec chmod 755 {} \\;",
+              "chown -R root:root /var/www/nyle-nxp-lp",
+              "echo Deploy completed at $(date)"
+            ]' \
+            --query "Command.CommandId" \
+            --output text)
+
+          echo "SSM Command ID: $COMMAND_ID"
+
+          aws ssm wait command-executed \
+            --region ${{ env.AWS_REGION }} \
+            --command-id "$COMMAND_ID" \
+            --instance-id "${{ env.INSTANCE_ID }}"
+
+          STATUS=$(aws ssm get-command-invocation \
+            --region ${{ env.AWS_REGION }} \
+            --command-id "$COMMAND_ID" \
+            --instance-id "${{ env.INSTANCE_ID }}" \
+            --query "Status" \
+            --output text)
+
+          echo "Deploy status: $STATUS"
+
+          if [ "$STATUS" != "Success" ]; then
+            echo "Deploy failed!"
+            aws ssm get-command-invocation \
+              --region ${{ env.AWS_REGION }} \
+              --command-id "$COMMAND_ID" \
+              --instance-id "${{ env.INSTANCE_ID }}" \
+              --query "StandardErrorContent" \
+              --output text
+            exit 1
+          fi
