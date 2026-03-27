@@ -11,17 +11,17 @@ NYLE X PARTNERS マーケティングLP サイト
 
 | ページ | URL |
 |--------|-----|
-| サービスページ | `https://nxp.nyle.co.jp/marketing/` |
-| ドメイントップ（リダイレクト） | `https://nxp.nyle.co.jp/` → `/marketing/` |
-| AI人材LPトップ | `https://nxp.nyle.co.jp/ai/` |
-| 問い合わせページ | `https://nxp.nyle.co.jp/contact/` |
-| 問い合わせ完了ページ | `https://nxp.nyle.co.jp/contact/complete/` |
-| 資料DLページ（リダイレクト） | `https://nxp.nyle.co.jp/ebook/` → `/ebook/marketing/` |
-| マーケティング資料DL | `https://nxp.nyle.co.jp/ebook/marketing/` |
-| 資料DL完了ページ | `https://nxp.nyle.co.jp/ebook/complete/` |
-| 人材募集ページ | `https://nxp.nyle.co.jp/entry/` |
-| 人材募集フォーム | `https://nxp.nyle.co.jp/entry/form/` |
-| 人材募集完了ページ | `https://nxp.nyle.co.jp/entry/complete/` |
+| サービスページ | https://nxp.nyle.co.jp/marketing/ |
+| ドメイントップ（リダイレクト） | https://nxp.nyle.co.jp/ → `/marketing/` |
+| AI人材LPトップ | https://nxp.nyle.co.jp/ai/ |
+| 問い合わせページ | https://nxp.nyle.co.jp/contact/ |
+| 問い合わせ完了ページ | https://nxp.nyle.co.jp/contact/complete/ |
+| 資料DLページ（リダイレクト） | https://nxp.nyle.co.jp/ebook/ → `/ebook/marketing/` |
+| マーケティング資料DL | https://nxp.nyle.co.jp/ebook/marketing/ |
+| 資料DL完了ページ | https://nxp.nyle.co.jp/ebook/complete/ |
+| 人材募集ページ | https://nxp.nyle.co.jp/entry/ |
+| 人材募集フォーム | https://nxp.nyle.co.jp/entry/form/ |
+| 人材募集完了ページ | https://nxp.nyle.co.jp/entry/complete/ |
 
 ## ディレクトリ構造
 
