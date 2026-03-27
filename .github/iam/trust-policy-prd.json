@@ -10,7 +10,7 @@
       "Condition": {
         "StringEquals": {
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-          "token.actions.githubusercontent.com:sub": "repo:volareinc/nyle-nxp-lp-marketing:environment:prd"
+          "token.actions.githubusercontent.com:sub": "repo:volareinc/nyle-nxp-lp:environment:prd"
         }
       }
     }

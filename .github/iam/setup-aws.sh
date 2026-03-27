@@ -56,7 +56,7 @@ fi
 echo ""
 echo "=== Step 3: IAM ロール作成（dev）==="
 
-ROLE_NAME_DEV="github-actions-nxp-lp-marketing-dev"
+ROLE_NAME_DEV="github-actions-nxp-lp-dev"
 
 if aws iam get-role --role-name "$ROLE_NAME_DEV" 2>/dev/null; then
   echo "IAMロール $ROLE_NAME_DEV は既に存在します（スキップ）"
@@ -69,7 +69,7 @@ else
 
   aws iam put-role-policy \
     --role-name "$ROLE_NAME_DEV" \
-    --policy-name "nxp-lp-marketing-deploy-dev" \
+    --policy-name "nxp-lp-deploy-dev" \
     --policy-document "file://${SCRIPT_DIR}/permission-policy-dev.json"
 
   echo "IAMロール作成完了: $ROLE_ARN_DEV"
@@ -78,7 +78,7 @@ fi
 echo ""
 echo "=== Step 4: IAM ロール作成（prd）==="
 
-ROLE_NAME_PRD="github-actions-nxp-lp-marketing-prd"
+ROLE_NAME_PRD="github-actions-nxp-lp-prd"
 
 if aws iam get-role --role-name "$ROLE_NAME_PRD" 2>/dev/null; then
   echo "IAMロール $ROLE_NAME_PRD は既に存在します（スキップ）"
@@ -91,7 +91,7 @@ else
 
   aws iam put-role-policy \
     --role-name "$ROLE_NAME_PRD" \
-    --policy-name "nxp-lp-marketing-deploy-prd" \
+    --policy-name "nxp-lp-deploy-prd" \
     --policy-document "file://${SCRIPT_DIR}/permission-policy-prd.json"
 
   echo "IAMロール作成完了: $ROLE_ARN_PRD"
