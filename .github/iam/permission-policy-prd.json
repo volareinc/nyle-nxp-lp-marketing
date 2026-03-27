@@ -18,14 +18,17 @@
     {
       "Sid": "SSMSendCommand",
       "Effect": "Allow",
-      "Action": [
-        "ssm:SendCommand",
-        "ssm:GetCommandInvocation"
-      ],
+      "Action": "ssm:SendCommand",
       "Resource": [
         "arn:aws:ssm:ap-northeast-1::document/AWS-RunShellScript",
         "arn:aws:ec2:ap-northeast-1:420184924451:instance/i-03bd4d530f4d6a31b"
       ]
+    },
+    {
+      "Sid": "SSMGetCommandInvocation",
+      "Effect": "Allow",
+      "Action": "ssm:GetCommandInvocation",
+      "Resource": "*"
     }
   ]
 }
